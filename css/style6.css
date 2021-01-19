@@ -53,7 +53,7 @@ ul li.active a{
 	left: 2%;
 }
 
-.download3{
+.torrent-rar{
 	padding: 2px 10px;
 	border-radius: 5px;
 	background-color: #fff;
@@ -62,7 +62,7 @@ ul li.active a{
 	left: 2%;
 }
 
-.download4{
+.torrent-zip{
 	padding: 2px 10px;
 	border-radius: 5px;
 	background-color: #fff;
