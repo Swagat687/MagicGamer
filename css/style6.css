@@ -1,0 +1,119 @@
+*{
+	margin:0;
+	padding:0; 
+	font-family: Century Gothik;
+	box-sizing: border-box;
+}
+
+ul{
+	float: right;
+	list-style-type: none;
+ 	margin-top: 25px;
+ 	margin-right: 15px;
+}
+
+ul li{
+	display: inline-block;
+}
+
+ul li a{
+	text-decoration: none;
+	color: #fff;
+	padding: 5px 20px;
+	border: 1px solid transparent;
+	transition: 0.6s ease;
+
+}
+
+ul li a:hover{
+	background-color: #fff;
+	color: #000;
+}
+
+ul li.active a{
+	background-color: aliceblue;
+	color: #000;
+}
+
+.download{
+	padding: 2px 10px;
+	border-radius: 5px;
+	background-color: #fff;
+	position: absolute;
+	top: 19%;
+	left: 24%;
+}
+
+.download3{
+	padding: 2px 10px;
+	border-radius: 5px;
+	background-color: #fff;
+	position: absolute;
+	top: 25%;
+	left: 24%;
+}
+
+.download2{
+	padding: 2px 10px;
+	border-radius: 5px;
+	background-color: #fff;
+	position: absolute;
+	top: 19%;
+	left: 2%;
+}
+
+.torrent-rar{
+	padding: 2px 10px;
+	border-radius: 5px;
+	background-color: #fff;
+	position: absolute;
+	top: 19%;
+	left: 55%;
+}
+
+.torrent-zip{
+	padding: 2px 10px;
+	border-radius: 5px;
+	background-color: #fff;
+	position: absolute;
+	top: 25%;
+	left: 55%;
+}
+
+.games h1{
+	color: #fff;
+	position: absolute;
+	top: 12%;
+	left: 2%;
+	padding: 2px 10px;
+	border-radius: 3px;
+
+}
+
+.games h2{
+	color: #fff;
+	position: absolute;
+	top: 13%;
+	left: 24%;
+	padding: 2px 10px;
+	border-radius: 3px;
+
+}
+
+.games h3{
+	color: #fff;
+	position: absolute;
+	top: 13%;
+	left: 55%;
+	padding: 2px 10px;
+	border-radius: 3px;
+
+}
+
+
+.clock{
+	position: absolute;
+	top: 94%;
+	left: 80%;
+	color: #fff;
+}
