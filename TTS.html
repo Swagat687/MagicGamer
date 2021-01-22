@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TTS with Java</title>
+    <link rel="stylesheet" type="text/css" href="css/style9.css">
+</head>
+<body>
+    <div class="popup" id="popup-1">
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="close-btn" onclick="togglePopup()">&times;</div>
+    <h1>Instructions</h1>
+    <p>1. In the textbox, input the text you want your device to speak. 2. Choose the language you want from the languages listed according to your device. 3. Click on the "Speak!" button to run the action. As this website was built for a pc, some languages might not work on your smartphone. To get the best experience visit this webpage on you laptop or computer.</p>
+  </div>
+        <style type="text/css">
+            .popup .overlay {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100vw;
+  height:100vh;
+  background:rgba(0,0,0,0.7);
+  z-index:1;
+  display:none;
+}
+
+.popup .content {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%) scale(0);
+  background:#fff;
+  width:500px;
+  height:250px;
+  z-index:2;
+  text-align:center;
+  padding:20px;
+  box-sizing:border-box;
+  font-family:"Open Sans",sans-serif;
+}
+
+.popup .close-btn {
+  cursor:pointer;
+  position:absolute;
+  right:20px;
+  top:20px;
+  width:30px;
+  height:30px;
+  background:#222;
+  color:#fff;
+  font-size:25px;
+  font-weight:600;
+  line-height:30px;
+  text-align:center;
+  border-radius:50%;
+}
+
+.popup.active .overlay {
+  display:block;
+}
+
+.popup.active .content {
+  transition:all 300ms ease-in-out;
+  transform:translate(-50%,-50%) scale(1);
+}
+
+button {
+  position:absolute;
+  top:30%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  padding:15px;
+  font-size:18px;
+  border:2px solid #222;
+  color:#222;
+  text-transform:uppercase;
+  font-weight:600;
+  background:#fff;
+}
+
+button:hover{
+    background-color: pink;
+    cursor: pointer;
+    transition: 1s ease;
+}
+        </style>
+        <script type="text/javascript">
+            function togglePopup(){
+  document.getElementById("popup-1").classList.toggle("active");
+}
+        </script>
+    </div>
+    <button onclick="togglePopup()">Show Instructions</button>
+    <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Posts.html">Submit</a></li>
+                <li><a href="signup.html">Magic Army</a></li>
+                <li><a href="Downloads.html">Downloads</a></li>
+                <li class="active"><a href="#">TTS with Java</a></li>
+            </ul>
+
+    <p class="main">Select The Voice You Like: </p><select class="speech" id='voiceList'></select> <br><br>
+
+    <input class="in" id='txtInput' placeholder="type here..." /> <br><br>    
+    <button class="btn1" id='btnSpeak'>Speak!</button>
+    <style type="text/css">
+
+        body{
+    background-image:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(hiTech.jpg);
+    height: 90vh;
+    background-size: cover;
+    background-position: center; 
+}
+
+        ul{
+    float: right;
+    list-style-type: none;
+    margin-top: 25px;
+    margin-right: 15px;
+}
+
+ul li{
+    display: inline-block;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 20px;
+    border: 1px solid transparent;
+    transition: 0.6s ease;
+
+}
+
+ul li a:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+ul li.active a{
+    background-color: #fff;
+    color: #000;
+}
+
+        .main{
+            color: #fff;
+            font-size: 30px;
+            position: absolute;
+            top: 38.3%;
+            left: 23%;
+        }
+
+
+        .btn1{
+            position: absolute;
+            top: 58%;
+            left: 60%;
+            background-color: red;
+            color: #fff;
+            border: none;
+            font-weight: 200;
+            font-size: 18;
+            padding: 4px 18px;
+            height: 35px;
+            width: 100px;
+            border-radius: 13px;
+        }
+
+        .btn1:hover{
+            background-color: pink;
+            color: #000;
+            cursor: pointer;
+            transition: 0.6s ease;
+        }
+
+
+
+        .in{
+            position: absolute;
+            top: 58%;
+            left: 33%; 
+            height: 30px;
+            width: 300px;
+            background-color: pink;
+            border-radius: 5px;
+        }
+
+        .in:hover{
+        background-color: pink;
+            color: #000;
+            transition: 0.6s ease;
+        }
+
+        .speech{
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            size: 100px;
+        }
+
+        .speech:hover{
+        background-color: green;
+            color: #000;
+            cursor: pointer;
+            transition: 0.6s ease;
+        }
+
+        .clock{
+    position: absolute;
+    top: 94%;
+    left: 80%;
+    color: #fff;
+}
+    </style>
+    <script>
+        var txtInput = document.querySelector('#txtInput');
+        var voiceList = document.querySelector('#voiceList');
+        var btnSpeak = document.querySelector('#btnSpeak');
+        var synth = window.speechSynthesis;
+        var voices = [];
+
+        PopulateVoices();
+        if(speechSynthesis !== undefined){
+            speechSynthesis.onvoiceschanged = PopulateVoices;
+        }
+
+        btnSpeak.addEventListener('click', ()=> {
+            var toSpeak = new SpeechSynthesisUtterance(txtInput.value);
+            var selectedVoiceName = voiceList.selectedOptions[0].getAttribute('data-name');
+            voices.forEach((voice)=>{
+                if(voice.name === selectedVoiceName){
+                    toSpeak.voice = voice;
+                }
+            });
+            synth.speak(toSpeak);
+        });
+
+        function PopulateVoices(){
+            voices = synth.getVoices();
+            var selectedIndex = voiceList.selectedIndex < 0 ? 0 : voiceList.selectedIndex;
+            voiceList.innerHTML = '';
+            voices.forEach((voice)=>{
+                var listItem = document.createElement('option');
+                listItem.textContent = voice.name;
+                listItem.setAttribute('data-lang', voice.lang);
+                listItem.setAttribute('data-name', voice.name);
+                voiceList.appendChild(listItem);
+            });
+
+            voiceList.selectedIndex = selectedIndex;
+        }
+    </script>
+
+
+    <div class="clock">
+        <p id="time">
+            <script type="text/javascript">
+                function showTime(){
+                document.getElementById("time").innerHTML = Date();
+            }
+                showTime();
+                setInterval(showTime, 1000)
+            </script>
+        </p>
+        </div>
+</body>
+</html>
