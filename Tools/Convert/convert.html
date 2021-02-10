@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Temperature Converter</h1>
+                <button class="btn1" onclick="window.location.href='convert.html' "><b>Clear</b></button>
+        </header>
+        <section class="inputs">
+            <input type="number" name="celcius" id="celcius" class="input" placeholder="Celcius">
+            <input type="number" name="fahrenheit" id="fahrenheit" class="input" placeholder="Fahrenheit">
+            <input type="number" name="kelvin" id="kelvin" class="input" placeholder="Kelvin">
+        </section>
+    </main>
+    <style type="text/css">
+        .btn1{
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 0px;
+            margin: 0px;
+            size: 40px;
+            background-color: red;
+        }
+
+        .btn1:hover{
+            cursor: pointer;
+        }
+    </style>
+    <script src="main.js"></script>
+</body>
+</html>
