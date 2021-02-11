@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Video Recorder</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div id="container">
+      <video id="gum" playsinline autoplay muted></video>
+      <video id="recorded" playsinline loop></video>
+
+      <div>
+        <button id="start" class="start">Start camera</button>
+        <button id="record" class="record" disabled>Record</button>
+        <button id="play" class="play" disabled>Play</button>
+        <button id="download" class="download" disabled>Download</button>
+      </div>
+
+      <div class="h4">
+        <h4>Media Stream options:</h4>
+        <p class="echo">
+          Echo cancellation: <input type="checkbox" id="echoCancellation" />
+        </p>
+      </div>
+
+      <div>
+        <span id="errorMsg"></span>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

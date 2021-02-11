@@ -1,0 +1,92 @@
+button {
+  margin: 0 3px 10px 0;
+  padding-left: 2px;
+  padding-right: 2px;
+  width: 99px;
+}
+
+button:last-of-type {
+  margin: 0;
+}
+
+p.borderBelow {
+  margin: 0 0 20px 0;
+  padding: 0 0 20px 0;
+}
+
+video {
+  vertical-align: top;
+  --width: 25vw;
+  width: var(--width);
+  height: calc(var(--width) * 0.5625);
+}
+
+video:last-of-type {
+  margin: 0 0 20px 0;
+}
+
+video#gumVideo {
+  margin: 0 20px 20px 0;
+}
+
+.start{
+  color: red;
+}
+
+.start:hover{
+  cursor: pointer;
+  color: green;
+  background-color: violet;
+  transition: 1s ease;
+}
+
+.record{
+  color: red;
+}
+
+.record:hover{
+  cursor: pointer;
+  color: green;
+  background-color: violet;
+  transition: 1s ease;
+}
+
+.play{
+  color: red;
+}
+
+.play:hover{
+  cursor: pointer;
+  color: green;
+  background-color: violet;
+  transition: 1s ease;
+}
+
+.download{
+  color: red;
+}
+
+.download:hover{
+  cursor: pointer;
+  color: white;
+  background-color: blue;
+  transition: 1s ease;
+}
+
+.h4{
+  position: absolute;
+  top: 34.5%;
+  left: 42%;
+  transform: translate(-50%,-50%);
+}
+
+.echo{
+   position: absolute;
+    top: 37.5%;
+    left: 136%;
+    transform: translate(-50%,-50%);
+}
+
+body{
+  background-image: url(bg.jpg);
+}
